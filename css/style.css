@@ -89,10 +89,20 @@ a:hover {
 
 .expenseLi {
   display: flex;
+  margin-bottom: 20px;
 }
 
 .expenseLi p {
   font-size: 1.5rem;
   margin: 0;
   padding: 0.25rem;
+}
+
+
+
+.expenseCollection {
+  text-transform: capitalize;
+  text-align: right;
+  margin-right: 2vw;
+  font-weight: 700;
 }
