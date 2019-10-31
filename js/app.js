@@ -32,8 +32,6 @@ function createBudget(event) {
   totalFunds = budgetInput.value;
   budgetValueDisplay.innerHTML = "$" + totalFunds;
 
-
-  console.log(totalFunds);
   event.preventDefault();
 }
 
@@ -50,7 +48,6 @@ function addExpense(event) {
   };
 
 
-
   //dynamically create the list and take away from the budget
   var expenseLi = document.createElement("li");
   expensesList.appendChild(expenseLi);
@@ -64,25 +61,18 @@ function addExpense(event) {
 
 
   //create a remove button and once an item is deleted from the list it is added back to the budget
-  removeBtn = document.createElement('button');
-  removeBtn.innerHTML = "X";
+  removeBtn = document.createElement('a');
+  removeBtn.className = "fa fa-trash"
   expenseLi.appendChild(removeBtn);
 
 
   removeBtn.addEventListener("click", function () {
     expensesList.removeChild(expenseLi);
 
-    balanceValueDisplay.innerHTML = "";
     totalFunds = eval(totalFunds) + eval(expense.amount);
-    console.log(totalFunds);
     balanceValueDisplay.innerHTML = `$ ${totalFunds}`;
 
-
   });
-
-
-
-
 
   itemId++;
   expenseTitleInput.value = '';
